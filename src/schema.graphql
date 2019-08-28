@@ -1,3 +1,13 @@
 type Query {
     me: User
+    users : [User]!
+}
+type Mutation {
+    createUser(data:UserInput!): ResponseOutput!
+    deleteUser(id:ID!): User!
+    updateUser(id:ID!,data:UpdateUserInput): User!
+    loginUser(data:LoginInput): ResponseOutput!
+}
+type Subscription {
+    updateUser : User!
 }

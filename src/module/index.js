@@ -1,8 +1,16 @@
-import  { Query as userQuery } from './user/'
+import  { Query as userQuery,
+         Mutation as UserMutation,
+         Subscription as userSubscription } from './user/'
 
 const resolvers = {
     Query : {
         ...userQuery 
+    },
+    Mutation : {
+        ...UserMutation
+    },
+    Subscription : {
+        ...userSubscription
     }
    
 }

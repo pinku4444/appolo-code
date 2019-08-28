@@ -1,5 +1,24 @@
 type User {
+    _id:String!
     name: String!
     email: String!
-    age: Int!
+    avatar: String!
+    date: String!
+}
+input UserInput {
+    name: String!
+    password: String!
+    email: String!
+}
+
+type ResponseOutput {
+    token: String!
+}
+
+input UpdateUserInput {
+    name: String
+}
+input LoginInput {
+    email: String!
+    password: String!
 }
