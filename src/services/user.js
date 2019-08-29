@@ -15,7 +15,7 @@ export class UserAPI extends RESTDataSource {
 
 	async me() {
 		try {
-			const data = await this.get(`users/me`);
+			const data = await this.get(`user/me`);
 			return data;
 		}catch(err) {
 			let error = err.extensions.response.body;
@@ -27,7 +27,7 @@ export class UserAPI extends RESTDataSource {
 	async createUser(data) {
 		try {
 			const user = {...data}
-			const tokenData = await this.post('users',user);
+			const tokenData = await this.post('user',user);
 			return tokenData;
 		}catch(err) {
 			let error = err.extensions.response.body;
@@ -37,7 +37,7 @@ export class UserAPI extends RESTDataSource {
 	
 	async fetchUsers() {
 		try {
-			const data = await this.get(`users`);
+			const data = await this.get(`user`);
 			return data;
 
 		}catch(err) {
@@ -50,7 +50,7 @@ export class UserAPI extends RESTDataSource {
 
   async deleteUser(id) {
 	  try {
-		const data = await this.delete(`users/delete/${id}`);
+		const data = await this.delete(`user/delete/${id}`);
 		return data;
 
 	  }catch(err) {
@@ -61,7 +61,7 @@ export class UserAPI extends RESTDataSource {
   }
   async updateUser(id,data) {
     const userData = {...data};
-    const response  = await this.put(`users/update/${id}`,userData);
+    const response  = await this.put(`user/update/${id}`,userData);
     return response;
   }
   async loginUser(data) {
